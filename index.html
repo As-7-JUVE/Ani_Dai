@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusheen World 💗</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🐱 Para Mi Esposa 💗</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#galeria">Galería</a>
+            <a href="#cartas-amor">Cartas de amor</a>
+            <a href="#juegos">Minijuegos</a>
+            <a href="#musica">Música</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h2>Bienvenida a nuestro lugar de amor 💕</h2>
+            <p>Un lugar lleno de amor, gatitos y de nosotros.</p>
+            <img class="imagen-inicio" src="imagenes/p1.jpg" alt="Pusheen">
+        </section>
+
+        <section id="galeria">
+            <h2>🐾 Mi Esposa Hermosa 🐾</h2>
+
+            <div class="galeria-pusheen">
+
+                <!-- TARJETA 1 -->
+                <button class="tarjeta-giratoria" type="button"
+                    aria-label="Voltear imagen 1" aria-pressed="false">
+                    <span class="tarjeta-giratoria-interior">
+                        <span class="cara-tarjeta cara-delante">
+                            <img src="imagenes/p2.jpg" alt="Pusheen 1">
+                        </span>
+                        <span class="cara-tarjeta cara-detras">
+                            <img src="imagenes/a1.jpeg" alt="Imagen sorpresa 1">
+                        </span>
+                    </span>
+                </button>
+
+                <!-- TARJETA 2 -->
+                <button class="tarjeta-giratoria" type="button"
+                    aria-label="Voltear imagen 2" aria-pressed="false">
+                    <span class="tarjeta-giratoria-interior">
+                        <span class="cara-tarjeta cara-delante">
+                            <img src="imagenes/p3.jpg" alt="Pusheen 2">
+                        </span>
+                        <span class="cara-tarjeta cara-detras">
+                            <img src="imagenes/a2.jpeg" alt="Imagen sorpresa 2">
+                        </span>
+                    </span>
+                </button>
+
+                <!-- TARJETA 3 -->
+                <button class="tarjeta-giratoria" type="button"
+                    aria-label="Voltear imagen 3" aria-pressed="false">
+                    <span class="tarjeta-giratoria-interior">
+                        <span class="cara-tarjeta cara-delante">
+                            <img src="imagenes/p4.jpg" alt="Pusheen 3">
+                        </span>
+                        <span class="cara-tarjeta cara-detras">
+                            <img src="imagenes/a3.jpeg" alt="Imagen sorpresa 3">
+                        </span>
+                    </span>
+                </button>
+
+                <!-- TARJETA 4 -->
+                <button class="tarjeta-giratoria" type="button"
+                    aria-label="Voltear imagen 4" aria-pressed="false">
+                    <span class="tarjeta-giratoria-interior">
+                        <span class="cara-tarjeta cara-delante">
+                            <img src="imagenes/p5.jpg" alt="Pusheen 4">
+                        </span>
+                        <span class="cara-tarjeta cara-detras">
+                            <img src="imagenes/a4.jpeg" alt="Imagen sorpresa 4">
+                        </span>
+                    </span>
+                </button>
+
+                <!-- TARJETA 5 -->
+                <button class="tarjeta-giratoria" type="button"
+                    aria-label="Voltear imagen 5" aria-pressed="false">
+                    <span class="tarjeta-giratoria-interior">
+                        <span class="cara-tarjeta cara-delante">
+                            <img src="imagenes/p6.jpg" alt="Pusheen 5">
+                        </span>
+                        <span class="cara-tarjeta cara-detras">
+                            <img src="imagenes/a5.jpeg" alt="Imagen sorpresa 5">
+                        </span>
+                    </span>
+                </button>
+
+            </div>
+        </section>
+
+        <section id="cartas-amor">
+            <h2>💗 Mis Cartas de Amor 💗</h2>
+            <p>Unas cartitas especiales para ti ♡</p>
+
+            <div class="galeria-amor">
+                <div class="carta-amor">
+                    <img src="imagenes/carta 1.png" alt="Carta de amor 1">
+                </div>
+
+                <div class="carta-amor">
+                    <img src="imagenes/carta 2.png" alt="Carta de amor 2">
+                </div>
+
+                <div class="carta-amor">
+                    <img src="imagenes/carta 3.png" alt="Carta de amor 3">
+                </div>
+            </div>
+        </section>
+
+        <section id="juegos">
+            <h2>🎮 Minijuegos 🎮</h2>
+            <p>¡Diviértete un ratito con Pusheen Mi Amor!</p>
+
+            <div class="juegos-contenedor">
+
+                <!-- MINIJUEGO 1: MEMORIA -->
+                <article class="juego">
+                    <h3>🐱 Memoria de Pusheen</h3>
+                    <p>Encuentra las cinco parejas de imágenes iguales.</p>
+
+                    <div class="estadisticas">
+                        <span>Movimientos: <strong id="movs">0</strong></span>
+                        <span>Parejas: <strong id="parejas">0</strong>/5</span>
+                    </div>
+
+                    <div id="tablero" class="tablero-memoria"></div>
+
+                    <button id="reiniciarMemoria" class="boton-juego" type="button">
+                        Volver a jugar 🔄
+                    </button>
+                </article>
+
+                <!-- MINIJUEGO 2: ATRAPA CORAZONES -->
+                <article class="juego">
+                    <h3>💗 Atrapa los corazones</h3>
+                    <p>Haz clic en los corazones antes de que se acabe el tiempo. ¡Los dorados valen cinco puntos!</p>
+
+                    <div class="estadisticas estadisticas-corazones">
+                        <span>Puntos: <strong id="puntos">0</strong></span>
+                        <span>Tiempo: <strong id="tiempo">20</strong>s</span>
+                        <span>Récord: <strong id="record">0</strong></span>
+                    </div>
+
+                    <div id="campo" class="campo-corazones">
+                        <span class="instruccion-campo">¡Presiona jugar para comenzar! 💕</span>
+                    </div>
+
+                    <p id="aviso" class="aviso-juego" aria-live="polite">
+                        ¿Cuántos corazones puedes atrapar?
+                    </p>
+
+                    <button id="jugarCorazones" class="boton-juego" type="button">
+                        Jugar 💗
+                    </button>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- SECCIÓN MUSICAL -->
+    <section id="musica">
+        <h2>🎧 Musica 💗</h2>
+        <p>Mi amor por ti en canciones. ♡</p>
+
+        <div class="musica-contenedor">
+            <div class="musica-decoracion">
+                <span>🐱</span>
+                <h3>Nuestra playlist de amor</h3>
+                <p>Escucha nuestras canciones de amor.</p>
+                <span>♡ 🎀 ♡</span>
+            </div>
+
+            <div class="reproductor-spotify">
+                <iframe
+                    title="Playlist de Pusheen Music en Spotify"
+                    src="https://open.spotify.com/embed/playlist/08fQpdkOoalH640p4nQhRV?utm_source=generator"
+                    width="100%"
+                    height="352"
+                    frameborder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <p class="nota-musica">
+                Hecho con mucho amor ♡ Dale play para comenzar.
+            </p>
+
+            <a
+                class="boton-spotify"
+                href="spotify:playlist:08fQpdkOoalH640p4nQhRV">
+                Abre aqui para esucharlas completas amorcito 🎧
+            </a>
+        </div>
+    </section>
+    <!-- FIN DE MÚSICA -->
+
+    <footer>
+        <p>Hecho con 💗 para los amantes de Pusheen</p>
+    </footer>
+
+    <!-- VISOR DE CARTAS -->
+    <div id="visorCarta" class="visor-carta" aria-hidden="true">
+        <button id="cerrarCarta" class="cerrar-carta" type="button" aria-label="Cerrar">
+            ✕
+        </button>
+
+        <img id="cartaAmpliada" src="" alt="Carta de amor ampliada">
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

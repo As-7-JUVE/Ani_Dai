@@ -1,0 +1,635 @@
+
+/* COLORES PRINCIPALES */
+:root {
+    --fondo: #fff4f8;
+    --rosa: #f5a9c8;
+    --rosa-fuerte: #df78a4;
+    --texto: #654657;
+    --blanco: #ffffff;
+    --sombra: 0 5px 15px rgba(150, 80, 110, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+    background: var(--fondo);
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background: var(--rosa);
+}
+
+header h1 {
+    margin: 0 0 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+}
+
+section {
+    padding: 45px 7%;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 15px;
+}
+
+/* INICIO */
+#inicio {
+    background: #fff8fb;
+}
+
+.imagen-inicio {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    height: 280px;
+    object-fit: contain;
+    margin: 25px auto 0;
+    border-radius: 20px;
+}
+
+/* GALERÍA PUSHEEN */
+#galeria {
+    background: #ffeaf2;
+}
+
+.galeria-pusheen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 25px auto 0;
+}
+
+.galeria-pusheen img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: white;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+/* TARJETAS GIRATORIAS DE PUSHEEN */
+.galeria-pusheen .tarjeta-giratoria {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 220px;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+    perspective: 1000px;
+    overflow: visible;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tarjeta-giratoria-interior {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.75s ease;
+}
+
+.tarjeta-giratoria.girada .tarjeta-giratoria-interior {
+    transform: rotateY(180deg);
+}
+
+.galeria-pusheen .cara-tarjeta {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 20px;
+    background: white;
+    box-shadow: var(--sombra);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.galeria-pusheen .cara-tarjeta img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+    object-fit: contain;
+    background: white;
+    border-radius: 20px;
+    box-shadow: none;
+    transform: none;
+    transition: none;
+}
+
+.galeria-pusheen .cara-tarjeta.cara-detras {
+    transform: rotateY(180deg);
+}
+
+.galeria-pusheen .tarjeta-giratoria:hover {
+    transform: translateY(-4px);
+}
+
+.galeria-pusheen .tarjeta-giratoria:focus-visible {
+    outline: 3px solid var(--rosa-fuerte);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tarjeta-giratoria-interior {
+        transition-duration: 0.01ms;
+    }
+}
+
+/* CARTAS DE AMOR */
+#cartas-amor {
+    padding: 55px 7%;
+    text-align: center;
+    background: var(--fondo);
+    position: relative;
+}
+
+#cartas-amor h2 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+#cartas-amor > p {
+    margin-bottom: 30px;
+}
+
+#cartas-amor .galeria-amor {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#cartas-amor .carta-amor {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    background: var(--blanco);
+    border-radius: 25px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+}
+
+#cartas-amor .carta-amor img {
+    display: block;
+    position: static;
+    width: 100%;
+    height: 280px;
+    max-width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    transform: none;
+    border-radius: 18px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#cartas-amor .carta-amor img:hover {
+    transform: scale(1.02);
+}
+
+/* MINIJUEGOS */
+#juegos {
+    background: #ffeaf2;
+    min-height: 200px;
+}
+
+.juegos-contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 30px auto 0;
+    align-items: start;
+}
+
+.juego {
+    min-width: 0;
+    padding: 25px;
+    background: var(--blanco);
+    border-radius: 25px;
+    box-shadow: var(--sombra);
+}
+
+.juego h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.juego > p {
+    line-height: 1.5;
+}
+
+.estadisticas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.estadisticas span {
+    padding: 9px 12px;
+    background: #fff0f6;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+.estadisticas strong {
+    color: var(--rosa-fuerte);
+}
+
+/* TABLERO DE MEMORIA */
+.tablero-memoria {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.carta-memoria {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    min-width: 0;
+    padding: 5px;
+    overflow: hidden;
+    border: 2px solid var(--rosa);
+    border-radius: 13px;
+    background: #ffe0ed;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.carta-memoria:hover {
+    transform: scale(1.04);
+}
+
+.carta-memoria .reverso-memoria {
+    font-size: clamp(16px, 3vw, 28px);
+}
+
+.carta-memoria img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.carta-memoria.volteada,
+.carta-memoria.encontrada {
+    background: white;
+}
+
+.carta-memoria.volteada .reverso-memoria,
+.carta-memoria.encontrada .reverso-memoria {
+    display: none;
+}
+
+.carta-memoria.volteada img,
+.carta-memoria.encontrada img {
+    display: block;
+    visibility: visible !important;
+}
+
+.carta-memoria.encontrada {
+    border-color: #e9a0bf;
+    background: #fff6fa;
+}
+
+/* ATRAPA LOS CORAZONES */
+.campo-corazones {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border: 2px dashed var(--rosa);
+    border-radius: 18px;
+    background: #fff4f8;
+}
+
+.campo-corazones .instruccion-campo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    color: #b77896;
+    font-size: 0.95rem;
+}
+
+.corazon-juego {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    animation: aparecer-corazon 0.2s ease-out;
+}
+
+.corazon-juego:hover {
+    transform: scale(1.2);
+}
+
+@keyframes aparecer-corazon {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.aviso-juego {
+    min-height: 24px;
+    font-weight: bold;
+}
+
+.boton-juego {
+    display: inline-block;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    background: var(--rosa-fuerte);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.boton-juego:hover {
+    background: #ce6592;
+    transform: translateY(-2px);
+}
+
+.boton-juego:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* VISOR DE CARTAS AMPLIADAS */
+.visor-carta {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(60, 35, 50, 0.75);
+    backdrop-filter: blur(4px);
+}
+
+.visor-carta.activo {
+    display: flex;
+}
+
+.visor-carta img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+    background: white;
+}
+
+.cerrar-carta {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    z-index: 10000;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--rosa-fuerte);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: var(--sombra);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.cerrar-carta:hover {
+    background: #ce6592;
+    transform: scale(1.08);
+}
+
+/* MÚSICA */
+#musica {
+    background: linear-gradient(180deg, #fff4f8, #ffeaf2);
+    padding: 55px 7%;
+}
+
+#musica h2 {
+    color: var(--texto);
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+#musica > p {
+    margin-bottom: 30px;
+}
+
+.musica-contenedor {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 25px;
+    background: var(--blanco);
+    border: 2px solid #f8c8dc;
+    border-radius: 28px;
+    box-shadow: var(--sombra);
+}
+
+.musica-decoracion {
+    padding: 10px 10px 20px;
+}
+
+.musica-decoracion > span {
+    color: var(--rosa-fuerte);
+    font-size: 1.8rem;
+}
+
+.musica-decoracion h3 {
+    margin: 12px 0;
+    font-size: 1.5rem;
+    color: var(--rosa-fuerte);
+}
+
+.musica-decoracion p {
+    line-height: 1.6;
+}
+
+.reproductor-spotify {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: var(--sombra);
+}
+
+.reproductor-spotify iframe {
+    display: block;
+    width: 100%;
+    min-height: 352px;
+    border: 0;
+    border-radius: 15px;
+}
+
+.nota-musica {
+    margin: 20px 0 0;
+    color: var(--rosa-fuerte);
+    font-size: 0.95rem;
+}
+
+/* BOTÓN PARA ABRIR SPOTIFY */
+.boton-spotify {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 22px;
+    background: var(--rosa-fuerte);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: var(--sombra);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.boton-spotify:hover {
+    background: var(--rosa);
+    transform: translateY(-3px);
+}
+
+/* ADAPTACIÓN A PANTALLAS PEQUEÑAS */
+@media (max-width: 750px) {
+    #cartas-amor .galeria-amor {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .juegos-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .tablero-memoria {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 35px 5%;
+    }
+
+    #cartas-amor .galeria-amor {
+        grid-template-columns: 1fr;
+    }
+
+    #cartas-amor .carta-amor img {
+        height: 260px;
+        max-height: 260px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    .juego {
+        padding: 16px;
+    }
+
+    .tablero-memoria {
+        gap: 5px;
+    }
+
+    .carta-memoria {
+        padding: 3px;
+        border-radius: 9px;
+    }
+
+    .estadisticas {
+        gap: 7px;
+    }
+
+    .estadisticas span {
+        padding: 8px;
+        font-size: 0.82rem;
+    }
+
+    #musica {
+        padding: 35px 5%;
+    }
+
+    #musica h2 {
+        font-size: 1.8rem;
+    }
+
+    .musica-contenedor {
+        padding: 15px;
+        border-radius: 22px;
+    }
+
+    .reproductor-spotify iframe {
+        min-height: 352px;
+    }
+}
